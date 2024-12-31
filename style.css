@@ -1,136 +1,148 @@
 /* Resetting default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background: #121212;
-    color: #fff;
-    position: relative;
-  }
-  
-  /* 引入字体 */
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-  
-  /* 粒子背景 */
-  #particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  
-  /* 顶部导航栏 */
-  header {
-    background: #1a1a1a;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .navbar ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    color: #4caf50;
-  }
-  
-  /* 各部分的统一样式 */
-  .section {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-  }
-  
-  .intro, .vision, .journey, .contact {
-    background: linear-gradient(to right, #2a2a2a, #121212);
-  }
-  
-  .intro p, .vision p, .journey p {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 18px;
-  }
-  
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .event {
-    opacity: 0;
-    background: #2c2c2c;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 700px;
-    transition: opacity 1s ease;
-  }
-  
-  .event.show {
-    opacity: 1;
-  }
-  
-  button {
-    background: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background: #45a049;
-  }
-  
-  footer {
-    background: #1a1a1a;
-    color: #ccc;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-  }
-  
-  /* 打字效果 */
-  #intro-text {
-    display: inline-block;
-    min-height: 30px;
-  }
-  
-  /* 鼠标跟随效果 */
-  #particles-js {
-    z-index: -1;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background: #121212;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden; /* 防止水平滚动条 */
+}
+
+/* 引入字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 粒子背景 */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 顶部导航栏 */
+header {
+  background: rgba(26, 26, 26, 0.9); /* 半透明背景 */
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* 增加阴影效果 */
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 20px;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover {
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+/* 各部分的统一样式 */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.intro, .vision, .journey, .contact {
+  background: linear-gradient(135deg, #1e1e1e, #121212);
+}
+
+.intro p, .vision p, .journey p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.event {
+  opacity: 0;
+  background: #2c2c2c;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+  transition: opacity 1s ease;
+}
+
+.event.show {
+  opacity: 1;
+}
+
+button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+footer {
+  background: rgba(26, 26, 26, 0.9);
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  z-index: 10;
+}
+
+/* 打字效果 */
+#intro-text {
+  display: inline-block;
+  min-height: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+/* 鼠标跟随效果 */
+#particles-js {
+  z-index: -1;
+}
+
+
