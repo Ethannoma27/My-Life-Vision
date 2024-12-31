@@ -1,181 +1,107 @@
-/* Resetting default styles */
-* {
+/* 基本样式 */
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  background: #111;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  overflow: hidden;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  background: #121212;
-  color: #fff;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* 引入字体 */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-/* 粒子背景 */
-#particles-js {
+/* 设置背景 */
+.starfield {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  background: #000;
+  overflow: hidden;
 }
 
-/* 顶部导航栏 */
-header {
-  background: rgba(26, 26, 26, 0.9);
-  padding: 15px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: starMove 1.5s infinite linear;
 }
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* 星星粒子动画 */
+@keyframes starMove {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(300px, 300px);
+  }
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 0 15px;
-  padding: 5px 0;
-  transition: all 0.3s ease;
-  border-bottom: 2px solid transparent;
-}
-
-.navbar a:hover {
-  color: #4caf50;
-  border-color: #4caf50;
-}
-
-/* 各部分的统一样式 */
-.section {
-  padding: 60px 20px;
+/* 页面内容的容器 */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-}
-
-h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-}
-
-.intro, .vision, .journey, .contact {
-  background: linear-gradient(135deg, #1e1e1e, #121212);
-}
-
-.intro p, .vision p, .journey p {
   max-width: 800px;
-  margin: 20px auto;
-  font-size: 18px;
+  width: 90%;
 }
 
-.timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
-.event {
-  opacity: 0;
-  background: #2c2c2c;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 700px;
-  transition: opacity 1s ease;
-}
-
-.event.show {
-  opacity: 1;
+.description {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #ddd;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 button {
-  background: #4caf50;
-  color: #fff;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #ff007f, #6a00ff);
   border: none;
-  padding: 12px 24px;
+  color: white;
+  font-size: 1.1em;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
 }
 
 button:hover {
-  background: #45a049;
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff7eb3, #9a00ff);
 }
 
 footer {
-  background: rgba(26, 26, 26, 0.9);
-  color: #ccc;
-  padding: 20px;
-  text-align: center;
-  font-size: 14px;
-  position: relative;
-  z-index: 10;
+  margin-top: 50px;
+  color: #aaa;
+  font-size: 0.9em;
 }
 
-/* 打字效果 */
-#intro-text {
-  display: inline-block;
-  min-height: 30px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
+/* 控制A4横版区域 */
+@media print {
+  body {
+      width: 29.7cm;
+      height: 21cm;
+  }
+
+  .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
 }
 
-/* 鼠标跟随效果 */
-#particles-js {
-  z-index: -1;
-}
-
-/* 荧光圈字体效果 */
-.glowing-text {
-  font-size: 3em;
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 80px #00ffcc, 0 0 120px #00ffcc, 0 0 150px #00ffcc;
-}
-
-/* 调整按钮位置和尺寸 */
-.button-container {
-  margin-top: 40px;
-}
-
-.button-container button {
-  padding: 15px 30px;
-  font-size: 20px;
-  border-radius: 10px;
-}
-
-/* 紧凑布局调整 */
-.section {
-  padding: 60px 10px;
-}
-
-/* 鼠标指针样式 */
-.cursor {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: #00ffcc;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease;
-}
