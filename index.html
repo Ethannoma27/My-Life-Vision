@@ -5,154 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的探索之旅</title>
-    <style>
-        /* 基本样式 */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: #111;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            overflow: hidden;
-        }
-
-        /* 设置背景 */
-        .starfield {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            overflow: hidden;
-        }
-
-        .star {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: starMove 1.5s infinite linear;
-        }
-
-        /* 星星粒子动画 */
-        @keyframes starMove {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(300px, 300px);
-            }
-        }
-
-        /* 页面内容的容器 */
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            max-width: 800px;
-            width: 90%;
-        }
-
-        /* 打字效果的样式 */
-        .typing {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-            color: #ff7f00; /* 修改为你需要的颜色 */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: .15em solid orange; /* 打字光标 */
-        }
-
-        .description {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            color: #ddd;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-
-        button {
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #ff007f, #6a00ff);
-            border: none;
-            color: white;
-            font-size: 1.1em;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, #ff7eb3, #9a00ff);
-        }
-
-        footer {
-            margin-top: 50px;
-            color: #aaa;
-            font-size: 0.9em;
-        }
-
-        /* 控制A4横版区域 */
-        @media print {
-            body {
-                width: 29.7cm;
-                height: 21cm;
-            }
-
-            .content {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        /* 弹出框样式 */
-        #qrcodeModal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .qrcode-content {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        .qrcode-content img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .close-btn {
-            color: #333;
-            background-color: #ff007f;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入CSS样式 -->
 </head>
 <body>
 
@@ -172,4 +25,22 @@
             <br><br>
             未来的探索，邀您交流。
             如果你也热爱探索与创新，欢迎与我展开互动！
+        </p>
+
+        <!-- 查看二维码按钮 -->
+        <button onclick="showQRCodeModal()">查看二维码</button>
+    </div>
+
+    <!-- 二维码弹出框 -->
+    <div id="qrcodeModal">
+        <div class="qrcode-content">
+            <img src="https://github.com/Ethannoma27/My-Resume-2/blob/main/images/Qrcode.jpg?raw=true" alt="二维码">
+            <button class="close-btn" onclick="closeQRCodeModal()">关闭</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- 引入JavaScript代码 -->
+</body>
+</html>
+
   

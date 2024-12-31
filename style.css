@@ -20,33 +20,12 @@ body, html {
   overflow: hidden;
 }
 
+/* 星星样式 */
 .star {
   position: absolute;
   background-color: white;
   border-radius: 50%;
   opacity: 0.7;
-  animation: starMove 1.5s infinite linear;
-}
-
-/* 星星粒子动画 */
-@keyframes starMove {
-  0% {
-      transform: translate(0, 0);
-  }
-  100% {
-      transform: translate(300px, 300px);
-  }
-}
-
-/* 页面内容的容器 */
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  max-width: 800px;
-  width: 90%;
 }
 
 /* 打字效果的样式 */
@@ -56,13 +35,14 @@ body, html {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-  color: #ff7f00; /* 修改为你需要的颜色 */
+  color: #ff7f00;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
   white-space: nowrap;
   overflow: hidden;
   border-right: .15em solid orange; /* 打字光标 */
 }
 
+/* 描述文字样式 */
 .description {
   font-size: 1.2em;
   margin-bottom: 30px;
@@ -71,6 +51,7 @@ body, html {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+/* 按钮样式 */
 button {
   padding: 15px 30px;
   background: linear-gradient(135deg, #ff007f, #6a00ff);
@@ -88,25 +69,15 @@ button:hover {
   background: linear-gradient(135deg, #ff7eb3, #9a00ff);
 }
 
-footer {
-  margin-top: 50px;
-  color: #aaa;
-  font-size: 0.9em;
-}
-
-/* 控制A4横版区域 */
-@media print {
-  body {
-      width: 29.7cm;
-      height: 21cm;
-  }
-
-  .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
+/* 页面内容的容器 */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
 }
 
 /* 弹出框样式 */
@@ -143,4 +114,19 @@ footer {
   margin-top: 20px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+/* 控制A4横版区域 */
+@media print {
+  body {
+      width: 29.7cm;
+      height: 21cm;
+  }
+
+  .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
 }
