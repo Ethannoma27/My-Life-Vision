@@ -1,132 +1,110 @@
 /* 基本样式 */
 body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: #111;
-  font-family: 'Arial', sans-serif;
-  color: white;
-  overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #111;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
 }
 
 /* 设置背景 */
 .starfield {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
 }
 
+/* 星星粒子 */
 .star {
-  position: absolute;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: starMove 1.5s infinite linear;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: starMove linear infinite;
 }
 
-/* 星星粒子动画 */
+/* 星星动画 */
 @keyframes starMove {
-  0% {
-      transform: translate(0, 0);
-  }
-  100% {
-      transform: translate(300px, 300px);
-  }
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(300px, 300px);
+    }
 }
 
-/* 页面内容的容器 */
+/* 页面内容 */
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  max-width: 800px;
-  width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
 }
 
-h1.dynamic-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
-  animation: fadeInTitle 1.5s ease-out; /* 动态标题显示 */
+/* 打字效果 */
+.typing {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #ff7f00;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
 }
 
-/* 动态标题出现的动画效果 */
-@keyframes fadeInTitle {
-  0% {
-      opacity: 0;
-      transform: translateY(-30px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
+/* 其他描述文本 */
 .description {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  color: #ddd;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #ddd;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-button {
-  padding: 15px 30px;
-  background: linear-gradient(135deg, #ff007f, #6a00ff);
-  border: none;
-  color: white;
-  font-size: 1.1em;
-  cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease;
-  animation: buttonFadeIn 2s ease-out; /* 按钮渐显动画 */
+/* 弹出框 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
-/* 按钮渐显动画 */
-@keyframes buttonFadeIn {
-  0% {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
+.qrcode-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-button:hover {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #ff7eb3, #9a00ff);
+.qrcode-content img {
+    width: 200px;
+    height: 200px;
 }
 
-footer {
-  margin-top: 50px;
-  color: #aaa;
-  font-size: 0.9em;
-}
-
-/* 控制A4横版区域 */
-@media print {
-  body {
-      width: 29.7cm;
-      height: 21cm;
-  }
-
-  .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
+.close-btn {
+    color: #333;
+    background-color: #ff007f;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }
