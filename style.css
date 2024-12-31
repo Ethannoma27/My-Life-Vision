@@ -49,14 +49,18 @@ body, html {
   width: 90%;
 }
 
-h1 {
+/* 打字效果的样式 */
+.typing {
   font-size: 2em;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-  color: #ffffff;
+  color: #ff7f00; /* 修改为你需要的颜色 */
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid orange; /* 打字光标 */
 }
 
 .description {
@@ -105,3 +109,38 @@ footer {
   }
 }
 
+/* 弹出框样式 */
+#qrcodeModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.qrcode-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.qrcode-content img {
+  width: 200px;
+  height: 200px;
+}
+
+.close-btn {
+  color: #333;
+  background-color: #ff007f;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
