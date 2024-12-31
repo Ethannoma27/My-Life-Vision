@@ -11,7 +11,7 @@ body {
   background: #121212;
   color: #fff;
   position: relative;
-  overflow-x: hidden; /* 防止水平滚动条 */
+  overflow-x: hidden;
 }
 
 /* 引入字体 */
@@ -29,12 +29,12 @@ body {
 
 /* 顶部导航栏 */
 header {
-  background: rgba(26, 26, 26, 0.9); /* 半透明背景 */
+  background: rgba(26, 26, 26, 0.9);
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* 增加阴影效果 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .navbar {
@@ -52,7 +52,7 @@ header {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
-  margin: 0 20px;
+  margin: 0 15px;
   padding: 5px 0;
   transition: all 0.3s ease;
   border-bottom: 2px solid transparent;
@@ -65,7 +65,7 @@ header {
 
 /* 各部分的统一样式 */
 .section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -145,4 +145,37 @@ footer {
   z-index: -1;
 }
 
+/* 荧光圈字体效果 */
+.glowing-text {
+  font-size: 3em;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 80px #00ffcc, 0 0 120px #00ffcc, 0 0 150px #00ffcc;
+}
 
+/* 调整按钮位置和尺寸 */
+.button-container {
+  margin-top: 40px;
+}
+
+.button-container button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+/* 紧凑布局调整 */
+.section {
+  padding: 60px 10px;
+}
+
+/* 鼠标指针样式 */
+.cursor {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #00ffcc;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
