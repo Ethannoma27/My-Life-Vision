@@ -1,36 +1,80 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const textContent1 = `
-        在跨境电商的广阔天地中，我积累了深厚的经验，擅长优化供应链、维护客户关系和打造高效团队。
-    `;
-    const textContent2 = `
-        我的动力源自于对未来的前瞻洞察和对自我成长的持续追求。
-    `;
-    const textContent3 = `
-        不断挑战自我，借助技术与自动化的力量，我正在迈向更高的管理层次，释放无限潜能。
-    `;
+// 打字效果
+let typedText = "带着人生玩家的探索欲，我从大厂工程师转型到外贸电商，直到自主创业，实现阶段性成绩。";
+let currentText = '';
+let index = 0;
 
-    let currentIndex = 0;
-    const paragraphElement = document.getElementById("dynamicText");
+function typeEffect() {
+  if (index < typedText.length) {
+    currentText += typedText[index];
+    document.getElementById("intro-text").innerHTML = currentText;
+    index++;
+    setTimeout(typeEffect, 100);
+  }
+}
 
-    function typeText(content) {
-        let index = 0;
-        function type() {
-            if (index < content.length) {
-                paragraphElement.innerHTML += content.charAt(index);
-                index++;
-                setTimeout(type, 80);
-            }
-        }
-        type();
+window.onload = typeEffect;
+
+// 页面滚动时，元素渐显
+window.addEventListener("scroll", function() {
+  const elements = document.querySelectorAll('.event');
+  const windowHeight = window.innerHeight;
+
+  elements.forEach(element => {
+    const elementTop = element.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      element.classList.add('show');
     }
+  });
+});
 
-    typeText(textContent1);
+// 按钮点击时背景颜色变化
+document.getElementById("exploreBtn").addEventListener("click", function() {
+  document.body.style.transition = "background-color 1s ease";
+  document.body.style.backgroundColor = "#00ffcc"; // 科技感绿色
+  setTimeout(() => {
+    document.body.style.backgroundColor = "#121212"; // 恢复初始背景
+  }, 1000);
+});
 
-    setTimeout(function() {
-        typeText(textContent2);
-    }, textContent1.length * 80 + 1000);
+// 鼠标跟随动画
+const cursor = document.createElement('div');
+cursor.style.position = 'absolute';
+cursor.style.width = '10px';
+cursor.style.height = '10px';
+cursor.style.backgroundColor = '#00ffcc';
+cursor.style.borderRadius = '50%';
+cursor.style.pointerEvents = 'none';
+cursor.style.transition = 'transform 0.1s ease';
+document.body.appendChild(cursor);
 
-    setTimeout(function() {
-        typeText(textContent3);
-    }, (textContent1.length + textContent2.length) * 80 + 2000);
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = `${e.pageX - 5}px`;
+  cursor.style.top = `${e.pageY - 5}px`;
+});
+
+// 初始化粒子背景
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100
+    },
+    "size": {
+      "value": 3
+    },
+    "move": {
+      "speed": 1
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 100
+    }
+  },
+  "interactivity": {
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      }
+    }
+  }
 });
