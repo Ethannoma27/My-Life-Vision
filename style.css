@@ -4,7 +4,7 @@ body, html {
   padding: 0;
   height: 100%;
   background: #111;
-  font-family: 'Arial', 'Microsoft YaHei', '宋体', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: white;
   overflow: hidden;
 }
@@ -49,43 +49,26 @@ body, html {
   width: 90%;
 }
 
-/* 标题动感效果 */
-h1 {
-  font-size: 3em;
+h1.dynamic-title {
+  font-size: 2em;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
-  animation: pulseText 2s infinite, fadeIn 3s ease-out;
-  white-space: nowrap;
-  overflow: hidden;
+  animation: fadeInTitle 1.5s ease-out; /* 动态标题显示 */
 }
 
-/* 文字动画：渐变 + 放大 */
-@keyframes pulseText {
-  0% {
-      transform: scale(1);
-      color: #ffffff;
-  }
-  50% {
-      transform: scale(1.1);
-      color: #ff007f;
-  }
-  100% {
-      transform: scale(1);
-      color: #ffffff;
-  }
-}
-
-/* 渐变效果 */
-@keyframes fadeIn {
+/* 动态标题出现的动画效果 */
+@keyframes fadeInTitle {
   0% {
       opacity: 0;
+      transform: translateY(-30px);
   }
   100% {
       opacity: 1;
+      transform: translateY(0);
   }
 }
 
@@ -107,6 +90,19 @@ button {
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   transition: transform 0.3s ease;
+  animation: buttonFadeIn 2s ease-out; /* 按钮渐显动画 */
+}
+
+/* 按钮渐显动画 */
+@keyframes buttonFadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
 
 button:hover {
@@ -132,21 +128,5 @@ footer {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-  }
-}
-
-/* 移动端适配 */
-@media (max-width: 768px) {
-  h1 {
-      font-size: 2em;
-  }
-
-  .description {
-      font-size: 1em;
-  }
-
-  button {
-      padding: 12px 24px;
-      font-size: 1em;
   }
 }
