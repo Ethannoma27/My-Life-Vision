@@ -30,12 +30,14 @@ body, html {
 
 /* 打字效果的样式 */
 .typing {
-  font-size: 2em;
+  font-size: 2.5em; /* 调整字体大小 */
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-  color: #ff7f00;
+  color: white; /* 白色字体 */
+  background: linear-gradient(135deg, #9a00ff, #6a00ff); /* 紫色渐变 */
+  -webkit-background-clip: text; /* 背景渐变应用到文字 */
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
   white-space: nowrap;
   overflow: hidden;
@@ -82,7 +84,7 @@ button:hover {
 
 /* 弹出框样式 */
 #qrcodeModal {
-  display: none;
+  display: none; /* 初始隐藏二维码 */
   position: fixed;
   top: 0;
   left: 0;
