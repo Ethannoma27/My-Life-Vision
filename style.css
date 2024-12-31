@@ -4,7 +4,7 @@ body, html {
   padding: 0;
   height: 100%;
   background: #111;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', 'Microsoft YaHei', '宋体', sans-serif;
   color: white;
   overflow: hidden;
 }
@@ -20,31 +20,75 @@ body, html {
   overflow: hidden;
 }
 
-/* 星星样式 */
 .star {
   position: absolute;
   background-color: white;
   border-radius: 50%;
   opacity: 0.7;
+  animation: starMove 1.5s infinite linear;
 }
 
-/* 打字效果的样式 */
-.typing {
-  font-size: 2.5em; /* 调整字体大小 */
+/* 星星粒子动画 */
+@keyframes starMove {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(300px, 300px);
+  }
+}
+
+/* 页面内容的容器 */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+}
+
+/* 标题动感效果 */
+h1 {
+  font-size: 3em;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-  color: white; /* 白色字体 */
-  background: linear-gradient(135deg, #9a00ff, #6a00ff); /* 紫色渐变 */
-  -webkit-background-clip: text; /* 背景渐变应用到文字 */
+  color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+  animation: pulseText 2s infinite, fadeIn 3s ease-out;
   white-space: nowrap;
   overflow: hidden;
-  border-right: .15em solid orange; /* 打字光标 */
 }
 
-/* 描述文字样式 */
+/* 文字动画：渐变 + 放大 */
+@keyframes pulseText {
+  0% {
+      transform: scale(1);
+      color: #ffffff;
+  }
+  50% {
+      transform: scale(1.1);
+      color: #ff007f;
+  }
+  100% {
+      transform: scale(1);
+      color: #ffffff;
+  }
+}
+
+/* 渐变效果 */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
 .description {
   font-size: 1.2em;
   margin-bottom: 30px;
@@ -53,7 +97,6 @@ body, html {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* 按钮样式 */
 button {
   padding: 15px 30px;
   background: linear-gradient(135deg, #ff007f, #6a00ff);
@@ -71,51 +114,10 @@ button:hover {
   background: linear-gradient(135deg, #ff7eb3, #9a00ff);
 }
 
-/* 页面内容的容器 */
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  max-width: 800px;
-  width: 90%;
-}
-
-/* 弹出框样式 */
-#qrcodeModal {
-  display: none; /* 初始隐藏二维码 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.qrcode-content {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-.qrcode-content img {
-  width: 200px;
-  height: 200px;
-}
-
-.close-btn {
-  color: #333;
-  background-color: #ff007f;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  border-radius: 5px;
+footer {
+  margin-top: 50px;
+  color: #aaa;
+  font-size: 0.9em;
 }
 
 /* 控制A4横版区域 */
@@ -130,5 +132,21 @@ button:hover {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2em;
+  }
+
+  .description {
+      font-size: 1em;
+  }
+
+  button {
+      padding: 12px 24px;
+      font-size: 1em;
   }
 }
